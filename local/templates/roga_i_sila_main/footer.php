@@ -1,4 +1,6 @@
-<?php if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true) die(); ?>
+<?php if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die(); ?>
+</div>
+</section>
 <div class="d_footer width_960"></div>
 <div class="clear"></div>
 </div>
@@ -29,23 +31,23 @@
             </div>
         </section>
         <section class="info_block left_block_shadow">
-					<?$APPLICATION->IncludeComponent(
-						"bitrix:menu",
-						"menu_footer",
-						Array(
-							"ALLOW_MULTI_SELECT" => "N",
-							"CHILD_MENU_TYPE" => "left",
-							"DELAY" => "N",
-							"MAX_LEVEL" => "1",
-							"MENU_CACHE_GET_VARS" => array(""),
-							"MENU_CACHE_TIME" => "3600",
-							"MENU_CACHE_TYPE" => "A",
-							"MENU_CACHE_USE_GROUPS" => "Y",
-							"ROOT_MENU_TYPE" => "bottom",
-							"USE_EXT" => "N",
-							"COMPONENT_TEMPLATE" => "menu_footer"
-						)
-					);?>
+            <? $APPLICATION->IncludeComponent(
+                "bitrix:menu",
+                "menu_footer",
+                array(
+                    "ALLOW_MULTI_SELECT" => "N",
+                    "CHILD_MENU_TYPE" => "left",
+                    "DELAY" => "N",
+                    "MAX_LEVEL" => "1",
+                    "MENU_CACHE_GET_VARS" => array(""),
+                    "MENU_CACHE_TIME" => "3600",
+                    "MENU_CACHE_TYPE" => "A",
+                    "MENU_CACHE_USE_GROUPS" => "Y",
+                    "ROOT_MENU_TYPE" => "bottom",
+                    "USE_EXT" => "N",
+                    "COMPONENT_TEMPLATE" => "menu_footer"
+                )
+            ); ?>
         </section>
     </section>
     <div class="footer_inner">

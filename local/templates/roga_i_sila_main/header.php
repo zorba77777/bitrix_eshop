@@ -99,3 +99,5 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
             </nav>
         </div>
     </section>
+    <section class="content">
+        <div class="work_area width_960">
