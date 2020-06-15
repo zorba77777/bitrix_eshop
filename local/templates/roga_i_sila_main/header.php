@@ -16,7 +16,7 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 <head>
     <?php $APPLICATION->ShowHead(); ?>
 
-    <title><?php $APPLICATION->ShowTitle() ?></title>
+    <title><?php $APPLICATION->ShowTitle(false) ?></title>
 
     <link href="<?= PATH_DEFAULT_JS_CSS ?>favicon.ico" rel="shortcut icon" type="image/x-icon"/>
 
@@ -54,10 +54,21 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 						<span class="logo inline-block"></span>
 				<?php endif ?>
             </div>
-            <nav class="top_menu grey inline-block">
-                <a href="#" class="register">Регистрация</a>
-                <a href="#" class="auth">Авторизация</a>
-            </nav>
+            <?php
+            $APPLICATION->IncludeComponent(
+                "bitrix:system.auth.form",
+                "auth_form_header",
+                array(
+                    "FORGOT_PASSWORD_URL" => "",
+                    "PROFILE_URL" => "/personal/",
+                    "REGISTER_URL" => "/auth/",
+                    "SHOW_ERRORS" => "N",
+                    "COMPONENT_TEMPLATE" => "auth_form_header",
+                    "PROFILE_PAGE" => "/personal/profile/"
+                ),
+                false
+            );
+            ?>
             <div class="basket_block">
                 <a href="#" class="basket_product_count inline-block">0</a>
                 <a href="#" class="order_button pie">Оформить заказ</a>
