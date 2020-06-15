@@ -10,7 +10,7 @@
                 <?php 
                 $class = ''; 
                 
-                if ($arItem['LINK'] == $APPLICATION->GetCurPage(false)) {
+                if ($arItem["SELECTED"]) {
                     $class .= 'selected ';
                 }
 
