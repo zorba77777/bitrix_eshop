@@ -11,7 +11,7 @@
             <span class="dark_grey all_list">&nbsp;/&nbsp;<a href="#" class="text_decor_none"><b>Все</b></a></span>
             <div>
                 <figure class="shops_block_item">
-                    <a href=""><img src="<?= SITE_TEMPLATE_PATH ?>/images/test_shop_1.png" alt="" title=""/></a>
+                    <a href=""><img src="<?= PATH_DEFAULT_JS_CSS ?>images/test_shop_1.png" alt="" title=""/></a>
                     <figcaption class="shops_block_item_description">
                         <h3 class="shops_block_item_name">Салон на братиславской</h3>
                         <p class="dark_grey">Москва, ул. Братиславская, дом 23</p>
@@ -20,7 +20,7 @@
                     </figcaption>
                 </figure>
                 <figure class="shops_block_item">
-                    <a href=""><img src="<?= SITE_TEMPLATE_PATH ?>/images/test_shop_2.png" alt="" title=""/></a>
+                    <a href=""><img src="<?= PATH_DEFAULT_JS_CSS ?>images/test_shop_2.png" alt="" title=""/></a>
                     <figcaption class="shops_block_item_description">
                         <h3 class="shops_block_item_name">Салон на братиславской</h3>
                         <p class="dark_grey">Москва, ул. Братиславская, дом 23</p>

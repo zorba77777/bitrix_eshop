@@ -12,35 +12,33 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 <!--[if IE 9]>
 <html class="ie9"> <![endif]-->
 <!--[if gt IE 9]><!-->
-<html lang="<?php LANGUAGE_ID ?>"> <!--<![endif]-->
+<html lang="<?= LANGUAGE_ID ?>"> <!--<![endif]-->
 <head>
     <?php $APPLICATION->ShowHead(); ?>
 
     <title><?php $APPLICATION->ShowTitle() ?></title>
 
-    <link href="<?= SITE_TEMPLATE_PATH ?>/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+    <link href="<?= PATH_DEFAULT_JS_CSS ?>favicon.ico" rel="shortcut icon" type="image/x-icon"/>
 
     <?php
-    Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . "/css/base.css");
+    Asset::getInstance()->addJs(PATH_DEFAULT_JS . "jquery-1.9.1.min.js");
+	Asset::getInstance()->addJs(PATH_DEFAULT_JS . "jquery.placeholder.js");
+	Asset::getInstance()->addJs(PATH_DEFAULT_JS . "bxslider/jquery.bxslider.js");
+	Asset::getInstance()->addJs(PATH_DEFAULT_JS . "default_script.js");
 
-    Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . "/js/bxslider/jquery.bxslider.css");
+	Asset::getInstance()->addJs(PATH_DEFAULT_JS . "jquery.ui.selectmenu/jquery.ui.core.js");
+	Asset::getInstance()->addJs(PATH_DEFAULT_JS . "jquery.ui.selectmenu/jquery.ui.widget.js");
+	Asset::getInstance()->addJs(PATH_DEFAULT_JS . "jquery.ui.selectmenu/jquery.ui.position.js");
+	Asset::getInstance()->addJs(PATH_DEFAULT_JS . "jquery.ui.selectmenu/jquery.ui.selectmenu.js");
 
-    Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . "/js/jquery-1.9.1.min.js");
-    Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . "/js/jquery.placeholder.js");
-    Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . "/js/bxslider/jquery.bxslider.js");
-    Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . "/js/default_script.js");
-
-    Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . "/js/jquery.ui.selectmenu/jquery.ui.core.css");
-    Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . "/js/jquery.ui.selectmenu/jquery.ui.theme.css");
-    Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . "/js/jquery.ui.selectmenu/jquery.ui.selectmenu.css");
-
-    Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . "/js/jquery.ui.selectmenu/jquery.ui.core.js");
-    Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . "/js/jquery.ui.selectmenu/jquery.ui.widget.js");
-    Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . "/js/jquery.ui.selectmenu/jquery.ui.position.js");
-    Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . "/js/jquery.ui.selectmenu/jquery.ui.selectmenu.js");
+	Asset::getInstance()->addCss(PATH_DEFAULT_CSS . "base.css");
+	Asset::getInstance()->addCss(PATH_DEFAULT_JS . "bxslider/jquery.bxslider.css");
+	Asset::getInstance()->addCss(PATH_DEFAULT_JS . "jquery.ui.selectmenu/jquery.ui.core.css");
+	Asset::getInstance()->addCss(PATH_DEFAULT_JS . "jquery.ui.selectmenu/jquery.ui.theme.css");
+	Asset::getInstance()->addCss(PATH_DEFAULT_JS . "jquery.ui.selectmenu/jquery.ui.selectmenu.css");
     ?>
     <!--[if lt IE 9]>
-    <script src="<?= SITE_TEMPLATE_PATH ?>/js/html5shiv.js"></script>
+    <script src="<?= PATH_DEFAULT_JS ?>js/html5shiv.js"></script>
     <![endif]-->
 </head>
 <body>
@@ -50,7 +48,11 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
     <header class="header">
         <div class="width_960">
             <div class="item-logo">
-                <span class="logo inline-block"></span>
+				<?php if ($APPLICATION->GetCurPage() !== '/'): ?>
+						<a href="/" class="logo inline-block"></a>
+				<?php else: ?>
+						<span class="logo inline-block"></span>
+				<?php endif ?>
             </div>
             <nav class="top_menu grey inline-block">
                 <a href="#" class="register">Регистрация</a>
