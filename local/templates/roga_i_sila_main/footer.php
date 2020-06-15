@@ -1,4 +1,10 @@
 <?php if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die(); ?>
+
+<?php if (SITE_TEMPLATE_ID == "roga_i_sila_inner"): ?>
+</section>
+<hr class="bottom_line"/>
+<?php endif?>
+
 </div>
 </section>
 <div class="d_footer width_960"></div>
