@@ -56,7 +56,7 @@ if ($this->startResultCache()) {
 
     $items = [];
     while ($item = $dbItem->GetNext(true, false)) {
-        if ($item['PREVIEW_PICTURE'] != null) {
+        if ($item['PREVIEW_PICTURE']) {
             $filter[] = $item['PREVIEW_PICTURE'];
         }
         $items[] = $item;
@@ -65,7 +65,7 @@ if ($this->startResultCache()) {
     if (!empty($filter)) {
         $filter = implode(', ', $filter);
 
-        $tmp = CFile::GetList([], ["@ID" => $filter]);
+        $tmp = CFile::GetList(["@ID" => $filter]);
 
         while ($pict = $tmp->GetNext()) {
             $arResult['SRCS'][$pict['ID']] = CFile::GetFileSrc($pict);
