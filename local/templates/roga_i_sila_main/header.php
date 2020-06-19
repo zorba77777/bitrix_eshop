@@ -21,21 +21,21 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
     <link href="<?= DEFAULT_ASSETS_PATH ?>favicon.ico" rel="shortcut icon" type="image/x-icon"/>
 
     <?php
-    	Asset::getInstance()->addJs(DEFAULT_ASSETS_PATH . "js/jquery-1.9.1.min.js");
-	Asset::getInstance()->addJs(DEFAULT_ASSETS_PATH . "js/jquery.placeholder.js");
-	Asset::getInstance()->addJs(DEFAULT_ASSETS_PATH . "js/bxslider/jquery.bxslider.js");
-	Asset::getInstance()->addJs(DEFAULT_ASSETS_PATH . "js/default_script.js");
+    Asset::getInstance()->addJs(DEFAULT_ASSETS_PATH . "js/jquery-1.9.1.min.js");
+    Asset::getInstance()->addJs(DEFAULT_ASSETS_PATH . "js/jquery.placeholder.js");
+    Asset::getInstance()->addJs(DEFAULT_ASSETS_PATH . "js/bxslider/jquery.bxslider.js");
+    Asset::getInstance()->addJs(DEFAULT_ASSETS_PATH . "js/default_script.js");
 
-	Asset::getInstance()->addJs(DEFAULT_ASSETS_PATH . "js/jquery.ui.selectmenu/jquery.ui.core.js");
-	Asset::getInstance()->addJs(DEFAULT_ASSETS_PATH . "js/jquery.ui.selectmenu/jquery.ui.widget.js");
-	Asset::getInstance()->addJs(DEFAULT_ASSETS_PATH . "js/jquery.ui.selectmenu/jquery.ui.position.js");
-	Asset::getInstance()->addJs(DEFAULT_ASSETS_PATH . "js/jquery.ui.selectmenu/jquery.ui.selectmenu.js");
+    Asset::getInstance()->addJs(DEFAULT_ASSETS_PATH . "js/jquery.ui.selectmenu/jquery.ui.core.js");
+    Asset::getInstance()->addJs(DEFAULT_ASSETS_PATH . "js/jquery.ui.selectmenu/jquery.ui.widget.js");
+    Asset::getInstance()->addJs(DEFAULT_ASSETS_PATH . "js/jquery.ui.selectmenu/jquery.ui.position.js");
+    Asset::getInstance()->addJs(DEFAULT_ASSETS_PATH . "js/jquery.ui.selectmenu/jquery.ui.selectmenu.js");
 
-	Asset::getInstance()->addCss(DEFAULT_ASSETS_PATH . "css/base.css");
-	Asset::getInstance()->addCss(DEFAULT_ASSETS_PATH . "js/bxslider/jquery.bxslider.css");
-	Asset::getInstance()->addCss(DEFAULT_ASSETS_PATH . "js/jquery.ui.selectmenu/jquery.ui.core.css");
-	Asset::getInstance()->addCss(DEFAULT_ASSETS_PATH . "js/jquery.ui.selectmenu/jquery.ui.theme.css");
-	Asset::getInstance()->addCss(DEFAULT_ASSETS_PATH . "js/jquery.ui.selectmenu/jquery.ui.selectmenu.css");
+    Asset::getInstance()->addCss(DEFAULT_ASSETS_PATH . "css/base.css");
+    Asset::getInstance()->addCss(DEFAULT_ASSETS_PATH . "js/bxslider/jquery.bxslider.css");
+    Asset::getInstance()->addCss(DEFAULT_ASSETS_PATH . "js/jquery.ui.selectmenu/jquery.ui.core.css");
+    Asset::getInstance()->addCss(DEFAULT_ASSETS_PATH . "js/jquery.ui.selectmenu/jquery.ui.theme.css");
+    Asset::getInstance()->addCss(DEFAULT_ASSETS_PATH . "js/jquery.ui.selectmenu/jquery.ui.selectmenu.css");
     ?>
     <!--[if lt IE 9]>
     <script src="<?= DEFAULT_ASSETS_PATH ?>js/html5shiv.js"></script>
@@ -48,11 +48,11 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
     <header class="header">
         <div class="width_960">
             <div class="item-logo">
-				<?php if ($APPLICATION->GetCurPage() !== '/'): ?>
-						<a href="/" class="logo inline-block"></a>
-				<?php else: ?>
-						<span class="logo inline-block"></span>
-				<?php endif ?>
+                <?php if ($APPLICATION->GetCurPage() !== '/'): ?>
+                    <a href="/" class="logo inline-block"></a>
+                <?php else: ?>
+                    <span class="logo inline-block"></span>
+                <?php endif ?>
             </div>
             <?php
             $APPLICATION->IncludeComponent(
@@ -83,33 +83,21 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
                     <input type="submit" value=""/>
                 </div>
             </form>
-            <nav class="main_menu">
-                <ul>
-                    <li class="submenu pie">
-                        <a href="#">Легковые</a>
-                        <div class="submenu_border"></div>
-                        <ul>
-                            <li><a href="#">Седаны</a></li>
-                            <li><a href="#">Хетчбеки</a></li>
-                            <li><a href="#">Универсалы</a></li>
-                            <li><a href="#">Купе</a></li>
-                            <li><a href="#">Родстеры</a></li>
-                        </ul>
-                    </li>
-                    <li class="submenu pie">
-                        <a href="#">Внедорожники</a>
-                        <div class="submenu_border"></div>
-                        <ul>
-                            <li><a href="#">Рамные</a></li>
-                            <li><a href="#">Пикапы</a></li>
-                            <li><a href="#">Кроссоверы</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#">Раритетные</a></li>
-                    <li><a href="#">Распродажа</a></li>
-                    <li><a href="#">Новинки</a></li>
-                </ul>
-            </nav>
+            <?php
+            $APPLICATION->IncludeComponent(
+                "bitrix:menu",
+                "catalog_top",
+                array(
+                    "ALLOW_MULTI_SELECT" => "N",
+                    "MAX_LEVEL" => "2",
+                    "MENU_CACHE_TIME" => "3600",
+                    "MENU_CACHE_TYPE" => "A",
+                    "ROOT_MENU_TYPE" => "top",
+                    "USE_EXT" => "Y"
+                ),
+                false
+            );
+            ?>
         </div>
     </section>
     <section class="content">
