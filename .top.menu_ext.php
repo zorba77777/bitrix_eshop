@@ -15,8 +15,7 @@ $aMenuLinksExt = $APPLICATION->IncludeComponent(
         "IS_SEF" => "Y",
         "SEF_BASE_URL" => "/catalog/",
         "SECTION_PAGE_URL" => "#SECTION_CODE#/",
-        "DETAIL_PAGE_URL" => "#SECTION_ID#/#ELEMENT_ID#",
-
+        "DETAIL_PAGE_URL" => "#SECTION_ID#/#ELEMENT_ID#/"
     ),
     false
 );
