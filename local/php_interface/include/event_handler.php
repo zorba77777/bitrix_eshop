@@ -4,14 +4,13 @@ AddEventHandler("main", "OnAfterUserAuthorize", Array("EmailNotification", "OnAf
 
 class EmailNotification
 {
-    function OnAfterUserAuthorizeHandler($arUser)
+    public static function OnAfterUserAuthorizeHandler($arUser)
     {
-        $lastLogin = (!empty($arUser['user_fields']["LAST_LOGIN"])) ? date("Y.d.m H:i:s", strtotime($arUser['user_fields']["LAST_LOGIN"])) : "";
         $arEventFields = array(
-            "EMAIL"  => $arUser['user_fields']["EMAIL"],
-            "LOGIN"		=> $arUser['user_fields']["LOGIN"],
-            "LAST_LOGIN"	=> $lastLogin
+            'MAIL_TO'  => $arUser['user_fields']["EMAIL"],
+            'LOGIN' => $arUser['user_fields']["LOGIN"],
+            'AUTH_DATE'	=> date('Y.d.m H:i:s')
         );
-        CEvent::Send("LOGIN", SITE_ID, $arEventFields);
+        CEvent::Send('ON_USER_AUTHORIZE', SITE_ID, $arEventFields);
     }
 }
