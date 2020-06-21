@@ -1,12 +1,14 @@
 <?php
 require_once($_SERVER['DOCUMENT_ROOT'] . '/local/templates/roga_i_sila_main/header.php');
-?>
 
-<nav class="nav_chain">
-    <a href="/">Главная</a>
-    <span class="nav_arrow inline-block"></span>
-    <span>Легковые</span>
-</nav>
+$APPLICATION->IncludeComponent(
+    "bitrix:breadcrumb",
+    "breadcrumbs_qsoft",
+    array(
+        "START_FROM" => "0",
+        "PATH" => "",),
+    false
+) ?>
 <section class="content_area">
     <?php
     $APPLICATION->IncludeComponent(
@@ -21,7 +23,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/local/templates/roga_i_sila_main/head
             "USE_EXT" => "N"
         ),
         false
-    ); 
+    )
     ?>
 
 
