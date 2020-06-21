@@ -5,43 +5,35 @@ $arComponentParameters = array(
     "PARAMETERS" => array(
         "IBLOCK_TYPE" => array(
             "PARENT" => "BASE",
-            "NAME" => GetMessage("T_IBLOCK_DESC_LIST_TYPE"),
-            "TYPE" => "LIST",
-            "VALUES" => $arTypesEx,
-            "DEFAULT" => "salons",
-            "REFRESH" => "Y",
+            "NAME" => GetMessage("IBLOCK_TYPE"),
+            "TYPE" => "STRING",
+            "DEFAULT" => "salons"
         ),
         "IBLOCK_ID" => array(
             "PARENT" => "BASE",
-            "NAME" => GetMessage("T_IBLOCK_DESC_LIST_ID"),
-            "TYPE" => "LIST",
-            "VALUES" => $arIBlocks,
-            "DEFAULT" => '={$_REQUEST["ID"]}',
-            "ADDITIONAL_VALUES" => "Y",
-            "REFRESH" => "Y",
-        ),
-        "SALONS_COUNT" => array(
-            "PARENT" => "BASE",
-            "NAME" => GetMessage("T_IBLOCK_DESC_LIST_CONT"),
+            "NAME" => GetMessage("IBLOCK_ID"),
             "TYPE" => "STRING",
-            "DEFAULT" => "20",
+            "DEFAULT" => '4'
+        ),
+        "ITEMS_COUNT" => array(
+            "PARENT" => "BASE",
+            "NAME" => GetMessage("ITEMS_COUNT"),
+            "TYPE" => "STRING",
+            "DEFAULT" => "2",
         ),
         "CACHE_TIME" => array("DEFAULT" => 3600),
         "SORT_BY" => array(
-            "PARENT" => "DATA_SOURCE",
-            "NAME" => GetMessage("T_IBLOCK_DESC_IBORD"),
-            "TYPE" => "LIST",
-            "DEFAULT" => "RAND",
-            "VALUES" => $arSortFields,
-            "ADDITIONAL_VALUES" => "Y",
+            "PARENT" => "BASE",
+            "NAME" => GetMessage("SORT_BY"),
+            "TYPE" => "STRING",
+            "DEFAULT" => 'ASC'
         ),
         "SORT_ORDER" => array(
-            "PARENT" => "DATA_SOURCE",
-            "NAME" => GetMessage("T_IBLOCK_DESC_IBBY"),
+            "PARENT" => "BASE",
+            "NAME" => GetMessage("SORT_ORDER"),
             "TYPE" => "LIST",
-            "DEFAULT" => "DESC",
-            "VALUES" => $arSorts,
-            "ADDITIONAL_VALUES" => "Y",
-        ),
+            "VALUES" => ['ASC' => GetMessage("SORT_ASC"), 'DESC' => GetMessage("SORT_DESC")],
+            "DEFAULT" => 'ASC'
+        )
     )
 );

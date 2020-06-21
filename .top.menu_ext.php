@@ -16,7 +16,8 @@ $aMenuLinksExt = $APPLICATION->IncludeComponent(
         "SEF_BASE_URL" => "/catalog/",
         "SECTION_PAGE_URL" => "#SECTION_CODE#/",
         "DETAIL_PAGE_URL" => "#SECTION_ID#/#ELEMENT_ID#/"
-    ),
-    false
+    )
 );
 $aMenuLinks = array_merge($aMenuLinksExt, $aMenuLinks);
+
+

@@ -16,8 +16,8 @@ if (!\Bitrix\Main\Loader::includeModule('iblock')) {
     return;
 }
 
-if ($arParams["SALONS_COUNT"] <= 0) {
-    $arParams["SALONS_COUNT"] = 2;
+if ($arParams["ITEMS_COUNT"] <= 0) {
+    $arParams["ITEMS_COUNT"] = 2;
 }
 
 if (empty($arParams["SORT_BY"])) {
@@ -50,7 +50,7 @@ if ($this->startResultCache()) {
             'ACTIVE' => 'Y',
         ],
         false,
-        ['nTopCount' => $arParams['SALONS_COUNT']],
+        ['nTopCount' => $arParams['ITEMS_COUNT']],
         $select
     );
 
