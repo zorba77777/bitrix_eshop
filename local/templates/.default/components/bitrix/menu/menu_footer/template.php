@@ -1,5 +1,4 @@
 <?php if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die(); ?>
-
 <?php if (!empty($arResult)): ?>
     <h2><?= GetMessage('INFORMATION') ?></h2>
     <nav class="menu_footer grey">
@@ -7,21 +6,11 @@
 
             <?php foreach ($arResult as $arItem): ?>
 
-                <?php 
-                $class = ''; 
-                
-                if ($arItem["SELECTED"]) {
-                    $class .= 'selected ';
-                }
+			<li>
+				<a <?= ($arItem['PARAMS']['style'] == 'red') ? 'style="color: red"' : ''?> 
+				<?= ($arItem["SELECTED"]) ? 'class="selected"' : '' ?> href="<?= $arItem['LINK'] ?>"><?= $arItem['TEXT'] ?></a>
+			</li>
 
-                if ($arItem['PARAMS']['style'] == 'red') {
-                    $class .= 'red ';
-                }     
-                ?>
-
-
-                <li class="<?= $class ?>"><a href="<?= $arItem['LINK'] ?>"><?= $arItem['TEXT'] ?></a></li>
-            
             <?php endforeach ?>
 
         </ul>

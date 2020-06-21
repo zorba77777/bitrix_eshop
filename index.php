@@ -10,7 +10,7 @@ $APPLICATION->SetTitle("Рога и Сила - главная страница")
                 <ul class="bxslider">
                     <li>
                         <div class="banner">
-                            <img src="<?= SITE_TEMPLATE_PATH ?>/images/test_slider_1.png" alt="" title=""/>
+                            <img src="<?= DEFAULT_ASSETS_PATH ?>images/test_slider_1.png" alt="" title=""/>
                             <div class="banner_content">
                                 <h1>Купи Роллс Ройс, получи Отчество к&nbsp;своему имени</h1>
                                 <h2>Аподейктика индуктивно подчеркивает катарсис, однако Зигварт считал критерием
@@ -21,7 +21,7 @@ $APPLICATION->SetTitle("Рога и Сила - главная страница")
                     </li>
                     <li>
                         <div class="banner">
-                            <img src="<?= SITE_TEMPLATE_PATH ?>/images/test_slider_2.png" alt="" title=""/>
+                            <img src="<?= DEFAULT_ASSETS_PATH ?>images/test_slider_2.png" alt="" title=""/>
                             <div class="banner_content">
                                 <h1>Купи Астон Мартин, получи секретное Задание</h1>
                                 <h2>Аподейктика индуктивно подчеркивает катарсис, однако Зигварт считал критерием
@@ -32,7 +32,7 @@ $APPLICATION->SetTitle("Рога и Сила - главная страница")
                     </li>
                     <li>
                         <div class="banner">
-                            <img src="<?= SITE_TEMPLATE_PATH ?>/images/test_slider_3.png" alt="" title=""/>
+                            <img src="<?= DEFAULT_ASSETS_PATH ?>images/test_slider_3.png" alt="" title=""/>
                             <div class="banner_content">
                                 <h1>Купи Бентли, получи бейсболку</h1>
                                 <h2>Аподейктика индуктивно подчеркивает катарсис, однако Зигварт считал критерием
@@ -48,7 +48,7 @@ $APPLICATION->SetTitle("Рога и Сила - главная страница")
                 <figure class="product_item">
                     <div class="product_item_pict">
                         <a href="#">
-                            <img src="<?= SITE_TEMPLATE_PATH ?>/images/test_top_week_1.png" alt="BMW X3 2.0d"
+                            <img src="<?= DEFAULT_ASSETS_PATH ?>images/test_top_week_1.png" alt="BMW X3 2.0d"
                                  title="BMW X3 2.0d"/>
                         </a>
                     </div>
@@ -63,7 +63,7 @@ $APPLICATION->SetTitle("Рога и Сила - главная страница")
                     <div class="product_item_label new"></div>
                     <div class="product_item_pict">
                         <a href="#">
-                            <img src="<?= SITE_TEMPLATE_PATH ?>/images/test_top_week_2.png" alt="AUDI A6 3.0 TFSI"
+                            <img src="<?= DEFAULT_ASSETS_PATH ?>images/test_top_week_2.png" alt="AUDI A6 3.0 TFSI"
                                  title="AUDI A6 3.0 TFSI"/>
                         </a>
                     </div>
@@ -77,7 +77,7 @@ $APPLICATION->SetTitle("Рога и Сила - главная страница")
                     <div class="product_item_label sale"></div>
                     <div class="product_item_pict">
                         <a href="#">
-                            <img src="<?= SITE_TEMPLATE_PATH ?>/images/test_top_week_3.png" alt="Mercedes-Benz A200"
+                            <img src="<?= DEFAULT_ASSETS_PATH ?>images/test_top_week_3.png" alt="Mercedes-Benz A200"
                                  title="Mercedes-Benz A200"/>
                         </a>
                     </div>
@@ -90,7 +90,7 @@ $APPLICATION->SetTitle("Рога и Сила - главная страница")
                 <figure class="product_item">
                     <div class="product_item_pict">
                         <a href="#">
-                            <img src="<?= SITE_TEMPLATE_PATH ?>/images/no-image.jpg" alt="BMW Z4 sDrive35i"
+                            <img src="<?= DEFAULT_ASSETS_PATH ?>images/no-image.jpg" alt="BMW Z4 sDrive35i"
                                  title="BMW Z4 sDrive35i"/>
                         </a>
                     </div>
@@ -102,66 +102,23 @@ $APPLICATION->SetTitle("Рога и Сила - главная страница")
                 </figure>
             </section>
             <section class="news_block inverse">
-                <? $APPLICATION->IncludeComponent(
-    "bitrix:news.list",
-    "news_list_main",
-    array(
-        "ACTIVE_DATE_FORMAT" => "j M Y",
-        "ADD_SECTIONS_CHAIN" => "Y",
-        "AJAX_MODE" => "N",
-        "AJAX_OPTION_ADDITIONAL" => "",
-        "AJAX_OPTION_HISTORY" => "N",
-        "AJAX_OPTION_JUMP" => "N",
-        "AJAX_OPTION_STYLE" => "Y",
-        "CACHE_FILTER" => "N",
-        "CACHE_GROUPS" => "N",
-        "CACHE_TIME" => "36000000",
-        "CACHE_TYPE" => "A",
-        "CHECK_DATES" => "Y",
-        "DETAIL_URL" => "/company/news/#ELEMENT_CODE#",
-        "FIELD_CODE" => array(
-            0 => "",
-            1 => "",
-        ),
-        "FILTER_NAME" => "",
-        "HIDE_LINK_WHEN_NO_DETAIL" => "N",
-        "IBLOCK_ID" => "1",
-        "IBLOCK_TYPE" => "news",
-        "INCLUDE_IBLOCK_INTO_CHAIN" => "Y",
-        "INCLUDE_SUBSECTIONS" => "Y",
-        "MESSAGE_404" => "",
-        "NEWS_COUNT" => "3",
-        "PAGER_BASE_LINK_ENABLE" => "N",
-        "PAGER_DESC_NUMBERING" => "N",
-        "PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
-        "PAGER_SHOW_ALL" => "N",
-        "PAGER_SHOW_ALWAYS" => "N",
-        "PAGER_TEMPLATE" => ".default",
-        "PAGER_TITLE" => "Новости",
-        "PARENT_SECTION" => "",
-        "PARENT_SECTION_CODE" => "",
-        "PREVIEW_TRUNCATE_LEN" => "150",
-        "PROPERTY_CODE" => array(
-            0 => "",
-            1 => "",
-        ),
-        "SET_BROWSER_TITLE" => "Y",
-        "SET_LAST_MODIFIED" => "N",
-        "SET_META_DESCRIPTION" => "Y",
-        "SET_META_KEYWORDS" => "Y",
-        "SET_STATUS_404" => "N",
-        "SET_TITLE" => "N",
-        "SHOW_404" => "N",
-        "SORT_BY1" => "ACTIVE_FROM",
-        "SORT_BY2" => "SORT",
-        "SORT_ORDER1" => "DESC",
-        "SORT_ORDER2" => "ASC",
-        "STRICT_SECTION_CHECK" => "N",
-        "COMPONENT_TEMPLATE" => "news_list_main"
-    ),
-    false
-); ?>
+                <?php $APPLICATION->IncludeComponent(
+                    "bitrix:news.list",
+                    "news_list_main",
+                    array(
+                        "ACTIVE_DATE_FORMAT" => "j M Y",
+                        "CACHE_TIME" => "3600",
+                        "CACHE_TYPE" => "A",
+                        "DETAIL_URL" => "/company/news/#ELEMENT_CODE#/",
+                        "IBLOCK_TYPE" => "news",
+                        "NEWS_COUNT" => "3",
+                        "PREVIEW_TRUNCATE_LEN" => "150",
+                        "SORT_BY1" => "ACTIVE_FROM",
+                        "SORT_ORDER1" => "DESC",
+                        "SET_TITLE" => "N"
+                    )
+                ); ?>
             </section>
         </div>
     </section>
-<?php require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/footer.php"); ?>
+<?php require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/footer.php");
