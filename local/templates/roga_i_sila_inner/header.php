@@ -6,8 +6,7 @@ $APPLICATION->IncludeComponent(
     "breadcrumbs_qsoft",
     array(
         "START_FROM" => "0",
-        "PATH" => "",),
-    false
+        "PATH" => "",)
 ) ?>
 <section class="content_area">
     <?php
@@ -21,8 +20,7 @@ $APPLICATION->IncludeComponent(
             "MENU_CACHE_TYPE" => "A",
             "ROOT_MENU_TYPE" => "bottom",
             "USE_EXT" => "N"
-        ),
-        false
+        )
     )
     ?>
 

@@ -21,12 +21,11 @@
                 "CACHE_TYPE" => "A",
                 "IBLOCK_ID" => "4",
                 "IBLOCK_TYPE" => "salons",
-                "SALONS_COUNT" => "2",
+                "ITEMS_COUNT" => "2",
                 "DETAIL_URL" => "/company/stores/",
                 "SORT_BY" => "RAND",
                 "SORT_ORDER" => "DESC"
-            ),
-            false
+            )
         );
         ?>
         <section class="info_block left_block_shadow">

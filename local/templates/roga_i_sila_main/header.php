@@ -65,8 +65,7 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
                     "SHOW_ERRORS" => "N",
                     "COMPONENT_TEMPLATE" => "auth_form_header",
                     "PROFILE_PAGE" => "/personal/profile/"
-                ),
-                false
+                )
             );
             ?>
             <div class="basket_block">
@@ -94,11 +93,11 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
                     "MENU_CACHE_TYPE" => "A",
                     "ROOT_MENU_TYPE" => "top",
                     "USE_EXT" => "Y"
-                ),
-                false
+                )
             );
             ?>
         </div>
     </section>
     <section class="content">
         <div class="work_area width_960">
+

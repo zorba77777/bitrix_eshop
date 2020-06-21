@@ -116,8 +116,7 @@ $APPLICATION->SetTitle("Рога и Сила - главная страница")
                         "SORT_BY1" => "ACTIVE_FROM",
                         "SORT_ORDER1" => "DESC",
                         "SET_TITLE" => "N"
-                    ),
-                    false
+                    )
                 ); ?>
             </section>
         </div>
