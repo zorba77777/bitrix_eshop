@@ -1,6 +1,6 @@
-<? if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();?>
+<?php if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();?>
 
-<? if(!empty($arResult)): ?>
+<?php if(!empty($arResult)): ?>
     <section class="shops_block">
         <div>
             <?php foreach ($arResult['ITEMS'] as $arItem): ?>
@@ -42,6 +42,5 @@
         </div>
     </section>
     <div class="clear"></div>
-
-    <?php echo $arResult['NAV_STRING'] ?>
+    
 <?php endif; ?>

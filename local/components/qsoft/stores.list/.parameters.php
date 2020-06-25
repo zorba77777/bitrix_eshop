@@ -65,11 +65,6 @@ $arComponentParameters = [
             "DEFAULT" => "2",
         ],
         "CACHE_TIME"  =>  ["DEFAULT"=>3600],
-        "ALL_STORES_URL" => [
-            "NAME" => GetMessage("T_IBLOCK_ALL_STORES_URL"),
-            "TYPE" => "STRING",
-            "DEFAULT" => ""
-        ],
         "SORT_BY" => [
             "PARENT" => "DATA_SOURCE",
             "NAME" => GetMessage("T_IBLOCK_DESC_IBORD1"),

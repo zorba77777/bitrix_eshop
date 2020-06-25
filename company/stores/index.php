@@ -8,7 +8,7 @@ $APPLICATION->SetTitle("Наши салоны");?>
     array(
         "IBLOCK_TYPE" => "salons",
         "IBLOCK_ID" => "4",
-        "ITEMS_COUNT" => "2",
+        "ITEMS_COUNT" => "1000000000",
         "SHOW_MAP" => "Y",
         "SORT_BY" => "NAME",
         "SORT_ORDER" => "DESC",
