@@ -42,17 +42,7 @@ class Stores extends CBitrixComponent
         global $USER;
         global $APPLICATION;
 
-        $navParam = false;
-
-        if ($this->arParams["ITEMS_COUNT"]) {
-            $navParam = [
-                "nPageSize" => $this->arParams["ITEMS_COUNT"]
-            ];
-        }
-
-        $arNavigation = CDBResult::GetNavParams($navParam);
-
-        if ($this->startResultCache(false, $arNavigation)) {
+        if ($this->startResultCache()) {
 
             $select = [
                 "ID",
@@ -80,18 +70,8 @@ class Stores extends CBitrixComponent
                     'ACTIVE' => 'Y',
                 ],
                 false,
-                $navParam,
+                ['nTopCount' => $this->arParams['ITEMS_COUNT']],
                 $select
-            );
-
-            $navComponentObject = null;
-
-            $this->arResult["NAV_STRING"] = $dbItem->GetPageNavStringEx(
-                $navComponentObject,
-                '',
-                'nav_template',
-                'Y',
-                $this
             );
 
             $items = [];
@@ -102,10 +82,10 @@ class Stores extends CBitrixComponent
                 }
 
                 if ($item["PROPERTY_MAP_VALUE"]) {
-                    $onMap = explode(',', $item["PROPERTY_MAP_VALUE"]);
+                    list($lat, $lon) = explode(',', $item['PROPERTY_MAP_VALUE']);
                     $this->arResult['arPlacemarks'][] = [
-                        "LAT" => $onMap[0],
-                        "LON" => $onMap[1],
+                        "LAT" => $lat,
+                        "LON" => $lon,
                         "TEXT" => $item["PROPERTY_ADDRESS_VALUE"]
                     ];
                 }
@@ -114,6 +94,7 @@ class Stores extends CBitrixComponent
             }
 
             if (!empty($filter)) {
+
                 $tmp = CFile::GetList(["@ID" => $filter]);
 
                 while ($pict = $tmp->GetNext()) {
@@ -124,8 +105,7 @@ class Stores extends CBitrixComponent
             $this->arResult['ITEMS'] = $items;
 
             $this->setResultCacheKeys([
-                "arPlacemarks",
-                "NAV_STRING"
+                "arPlacemarks"
             ]);
 
             $this->IncludeComponentTemplate();
