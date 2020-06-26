@@ -4,21 +4,7 @@
     <section class="shops_block">
         <div>
             <?php foreach ($arResult['ITEMS'] as $arItem): ?>
-                <?php
-                $arButtons = CIBlock::GetPanelButtons(
-                    $arItem["IBLOCK_ID"],
-                    $arItem["ID"],
-                    0,
-                    ["SECTION_BUTTONS"=>false, "SESSID"=>false]
-                );
-
-                $arItem["ADD_LINK"] = $arButtons["edit"]["add_element"]["ACTION_URL"];
-                $arItem["EDIT_LINK"] = $arButtons["edit"]["edit_element"]["ACTION_URL"];
-                $arItem["DELETE_LINK"] = $arButtons["edit"]["delete_element"]["ACTION_URL"];
-
-                $arItem["ADD_LINK_TEXT"] = $arButtons["edit"]["add_element"]["TEXT"];
-                $arItem["EDIT_LINK_TEXT"] = $arButtons["edit"]["edit_element"]["TEXT"];
-                $arItem["DELETE_LINK_TEXT"] = $arButtons["edit"]["delete_element"]["TEXT"];
+                <?php                
 
                 $this->AddEditAction($arItem['ID'], $arItem['ADD_LINK'], $arItem["ADD_LINK_TEXT"]);
                 $this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], $arItem["EDIT_LINK_TEXT"]);

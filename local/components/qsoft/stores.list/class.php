@@ -8,18 +8,11 @@ class Stores extends CBitrixComponent
     public function onPrepareComponentParams($arParams)
     {
         if (empty($arParams["IBLOCK_TYPE"])) {
-            ShowError(\Bitrix\Main\Localization\Loc::GetMessage('IBLOCK_TYPE_NOT_INSTALLED'));
-            return;
+            $arParams["IBLOCK_TYPE"] = 'salons';
         }
 
         if ($arParams["IBLOCK_ID"] <= 0) {
-            ShowError(\Bitrix\Main\Localization\Loc::GetMessage('SECTION_IS_NOT_FOUND'));
-            return;
-        }
-
-        if (!\Bitrix\Main\Loader::includeModule('iblock')) {
-            ShowError(\Bitrix\Main\Localization\Loc::GetMessage('IBLOCK_MODULE_NOT_INSTALLED'));
-            return;
+            $arParams["IBLOCK_ID"] = 2;
         }
 
         if ($arParams["ITEMS_COUNT"] <= 0) {
@@ -43,6 +36,11 @@ class Stores extends CBitrixComponent
         global $APPLICATION;
 
         if ($this->startResultCache()) {
+
+            if (!\Bitrix\Main\Loader::includeModule('iblock')) {
+                ShowError(\Bitrix\Main\Localization\Loc::GetMessage('IBLOCK_MODULE_NOT_INSTALLED'));
+                return;
+            }
 
             $select = [
                 "ID",
@@ -76,6 +74,21 @@ class Stores extends CBitrixComponent
 
             $items = [];
             while ($item = $dbItem->GetNext(true, false)) {
+
+                $arButtons = CIBlock::GetPanelButtons(
+                    $item["IBLOCK_ID"],
+                    $item["ID"],
+                    0,
+                    ["SECTION_BUTTONS" => false, "SESSID" => false]
+                );
+
+                $item["ADD_LINK"] = $arButtons["edit"]["add_element"]["ACTION_URL"];
+                $item["EDIT_LINK"] = $arButtons["edit"]["edit_element"]["ACTION_URL"];
+                $item["DELETE_LINK"] = $arButtons["edit"]["delete_element"]["ACTION_URL"];
+
+                $item["ADD_LINK_TEXT"] = $arButtons["edit"]["add_element"]["TEXT"];
+                $item["EDIT_LINK_TEXT"] = $arButtons["edit"]["edit_element"]["TEXT"];
+                $item["DELETE_LINK_TEXT"] = $arButtons["edit"]["delete_element"]["TEXT"];     
 
                 if ($item['PREVIEW_PICTURE']) {
                     $filter[] = $item['PREVIEW_PICTURE'];
