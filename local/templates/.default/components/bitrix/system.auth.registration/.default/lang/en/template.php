@@ -13,4 +13,5 @@ $MESS["AUTH_EMAIL_SENT"] = "A registration confirmation request has been sent to
 $MESS["AUTH_EMAIL"] = "E-Mail";
 $MESS["AUTH_PASS_CHECK"] = "Password must contain at least 6 letters";
 $MESS["AUTH_SECURE_NOTE"] = "The password will be encrypted before it is sent. This will prevent the password from appearing in open form over data transmission channels.";
-$MESS["PLACEHOLDER"] = "********";
+$MESS["PLACEHOLDER_PASSWORD"] = "********";
+$MESS["PLACEHOLDER_EMAIL"] = "name@site.domain";

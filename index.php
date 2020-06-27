@@ -6,43 +6,17 @@ $APPLICATION->SetTitle("Рога и Сила - главная страница")
 ?>
     <section class="content">
         <div class="work_area width_960">
-            <div class="slider">
-                <ul class="bxslider">
-                    <li>
-                        <div class="banner">
-                            <img src="<?= DEFAULT_ASSETS_PATH ?>images/test_slider_1.png" alt="" title=""/>
-                            <div class="banner_content">
-                                <h1>Купи Роллс Ройс, получи Отчество к&nbsp;своему имени</h1>
-                                <h2>Аподейктика индуктивно подчеркивает катарсис, однако Зигварт считал критерием
-                                    истинности необходимость и&nbsp;общезначимость, для&nbsp;которых нет никакой опоры в&nbsp;объективном
-                                    мире <a href="#1" class="detail_link">подробнее</a></h2>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="banner">
-                            <img src="<?= DEFAULT_ASSETS_PATH ?>images/test_slider_2.png" alt="" title=""/>
-                            <div class="banner_content">
-                                <h1>Купи Астон Мартин, получи секретное Задание</h1>
-                                <h2>Аподейктика индуктивно подчеркивает катарсис, однако Зигварт считал критерием
-                                    истинности необходимость и общезначимость, для которых нет никакой опоры в
-                                    объективном мире <a href="#2" class="detail_link">подробнее</a></h2>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="banner">
-                            <img src="<?= DEFAULT_ASSETS_PATH ?>images/test_slider_3.png" alt="" title=""/>
-                            <div class="banner_content">
-                                <h1>Купи Бентли, получи бейсболку</h1>
-                                <h2>Аподейктика индуктивно подчеркивает катарсис, однако Зигварт считал критерием
-                                    истинности необходимость и общезначимость, для которых нет никакой опоры в
-                                    объективном мире <a href="#3" class="detail_link">подробнее</a></h2>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
+            <?$APPLICATION->IncludeComponent(
+	"qsoft:main.banner", 
+	".default", 
+	array(
+		"QUANTITY" => "3",
+		"TYPE" => "QSOFT",
+		"CACHE_TYPE" => "A",
+		"CACHE_TIME" => "3600"
+	),
+	false
+);?><br>
             <h2 class="push_right">Модели недели</h2>
             <section class="product_line">
                 <figure class="product_item">

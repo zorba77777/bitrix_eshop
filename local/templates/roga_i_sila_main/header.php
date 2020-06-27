@@ -62,6 +62,7 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 		"FORGOT_PASSWORD_URL" => "",
 		"PROFILE_URL" => "/personal/",
 		"REGISTER_URL" => "/auth/",
+                'AUTH_URL' => "/auth/",
 		"SHOW_ERRORS" => "N",
 		"COMPONENT_TEMPLATE" => "auth_form_header",
 		"PROFILE_PAGE" => "/personal/profile/"
