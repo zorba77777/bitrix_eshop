@@ -1,2 +1,2 @@
 <?php
-$APPLICATION->AddChainItem(GetMessage('AUTH'), "", true);
+$APPLICATION->AddChainItem(GetMessage('AUTH'));
