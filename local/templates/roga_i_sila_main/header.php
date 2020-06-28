@@ -71,8 +71,8 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 );
             ?>
             <div class="basket_block">
-                <a href="#" class="basket_product_count inline-block">0</a>
-                <a href="#" class="order_button pie">Оформить заказ</a>
+                <a href="/personal/cart/" class="basket_product_count inline-block"><?= $APPLICATION->ShowProperty('BASKET_COUNT') ?></a>
+                <a href="/personal/order/make/" class="order_button pie">Оформить заказ</a>
             </div>
         </div>
     </header>
