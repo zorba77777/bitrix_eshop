@@ -64,7 +64,7 @@ $arUrlRewrite=array (
     'PATH' => '/company/about/index.php',
     'SORT' => 100,
   ),
-  11 => 
+  13 => 
   array (
     'CONDITION' => '#^/catalog/#',
     'RULE' => '',
