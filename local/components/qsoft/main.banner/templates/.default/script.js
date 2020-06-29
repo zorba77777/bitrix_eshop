@@ -1,30 +1,12 @@
 $(document).ready(function () {
-
-    if ($(".bxslider .banner").length === 3) {
-
-        $(".bxslider").bxSlider({
-            controls: false,
-            autoStart: false
-        });
-
-    } else {
-
-        $(".bxslider").bxSlider({
-            pause: 3000
-        });
-
-        $('.bx-controls-direction a').on('click', function () {
-            $(".bxslider").bxSlider({
-                auto: true,
-                pause: 3000
-            });
-        });
-
-        $('.bx-pager-link').on('click', function () {
-            $(".bxslider").bxSlider({
-                auto: true,
-                pause: 3000
-            });
-        });
-    }
-})
+   
+   if ($(".bxslider").length > 0 && $(".bxslider .banner").length > 1) {
+       var slider = $(".bxslider").bxSlider({
+           auto: true,
+           pause: 3000,
+           onSlideAfter: function() {
+               slider.startAuto();
+           }
+       });
+   }
+});
