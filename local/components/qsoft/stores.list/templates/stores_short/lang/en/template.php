@@ -1,4 +1,4 @@
 <?php
-$MESS["OUR_SALONS"] = "Our salons";
-$MESS["ALL"] = "All";
-?>
+$MESS["OUR_STORES"] = "Our stores";
+$MESS["WORK_HOURS"] = "Work hours";
+$MESS["ALL_STORES"] = "All";
