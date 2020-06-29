@@ -1,3 +1,15 @@
 <?
+$PERM["desktop_app"]["*"]="D";
+$PERM["catalog"]["2"]="R";
+$PERM["catalog"]["6"]="R";
+$PERM["catalog"]["7"]="W";
+$PERM["catalog"]["8"]="W";
+$PERM["company"]["2"]="R";
+$PERM["company"]["6"]="R";
+$PERM["company"]["7"]="W";
+$PERM["company"]["8"]="W";
+$PERM["index.php"]["2"]="R";
 $PERM["index.php"]["6"]="R";
+$PERM["index.php"]["7"]="W";
+$PERM["index.php"]["8"]="W";
 ?>

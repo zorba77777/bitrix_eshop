@@ -56,21 +56,23 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
             </div>
             <?php
             $APPLICATION->IncludeComponent(
-                "bitrix:system.auth.form",
-                "auth_form_header",
-                array(
-                    "FORGOT_PASSWORD_URL" => "",
-                    "PROFILE_URL" => "/personal/",
-                    "REGISTER_URL" => "/auth/",
-                    "SHOW_ERRORS" => "N",
-                    "COMPONENT_TEMPLATE" => "auth_form_header",
-                    "PROFILE_PAGE" => "/personal/profile/"
-                )
-            );
+	"bitrix:system.auth.form", 
+	"auth_form_header", 
+	array(
+		"FORGOT_PASSWORD_URL" => "",
+		"PROFILE_URL" => "/personal/",
+		"REGISTER_URL" => "/auth/",
+                'AUTH_URL' => "/auth/",
+		"SHOW_ERRORS" => "N",
+		"COMPONENT_TEMPLATE" => "auth_form_header",
+		"PROFILE_PAGE" => "/personal/profile/"
+	),
+	false
+);
             ?>
             <div class="basket_block">
-                <a href="#" class="basket_product_count inline-block">0</a>
-                <a href="#" class="order_button pie">Оформить заказ</a>
+                <a href="/personal/cart/" class="basket_product_count inline-block"><?= $APPLICATION->ShowProperty('BASKET_COUNT') ?></a>
+                <a href="/personal/order/make/" class="order_button pie">Оформить заказ</a>
             </div>
         </div>
     </header>
