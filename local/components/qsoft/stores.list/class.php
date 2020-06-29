@@ -65,6 +65,7 @@ class Stores extends CBitrixComponent
                 [$this->arParams["SORT_BY"] => $this->arParams['SORT_ORDER']],
                 [
                     'IBLOCK_ID' => $this->arParams['IBLOCK_ID'],
+                    'IBLOCK_TYPE' => $this->arParams['IBLOCK_TYPE'],
                     'ACTIVE' => 'Y',
                 ],
                 false,
@@ -88,7 +89,7 @@ class Stores extends CBitrixComponent
 
                 $item["ADD_LINK_TEXT"] = $arButtons["edit"]["add_element"]["TEXT"];
                 $item["EDIT_LINK_TEXT"] = $arButtons["edit"]["edit_element"]["TEXT"];
-                $item["DELETE_LINK_TEXT"] = $arButtons["edit"]["delete_element"]["TEXT"];     
+                $item["DELETE_LINK_TEXT"] = $arButtons["edit"]["delete_element"]["TEXT"];
 
                 if ($item['PREVIEW_PICTURE']) {
                     $filter[] = $item['PREVIEW_PICTURE'];
@@ -122,6 +123,15 @@ class Stores extends CBitrixComponent
             ]);
 
             $this->IncludeComponentTemplate();
+        }
+        $arButtons = CIBlock::GetPanelButtons(
+            $this->arParams['IBLOCK_ID'],
+            $this->arResult['ID'],
+            0,
+            array("SECTION_BUTTONS"=>false)
+        );
+        if ($APPLICATION->GetShowIncludeAreas()) {
+            $this->addIncludeAreaIcons(CIBlock::GetComponentMenu("configure", $arButtons));
         }
     }
 }
